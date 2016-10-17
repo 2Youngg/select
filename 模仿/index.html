@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="apple-mobile-web-app-title" content="百度">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="normalize.css">
+	<title>百度一下</title>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <script src="http://labcdn.qiniudn.com/hoho/js/jquery.js"></script>
+    <script type='application/javascript' src='fastclick.js'></script>
+    <script type="text/javascript">var attachFastClick = Origami.fastclick;
+attachFastClick(document.body);</script>
+</head>
+<body>
+    <div id="page">
+    	<div id="header">
+    		<div id="logo" class="noTapColor"><img src="http://m.baidu.com/static/index/plus/plus_logo.png" width="181" height="57" alt="百度一下,你就知道"></div>
+    		<form id="index-form" action="" method="get" autocomplete="off">
+    			<div id="se-bar">
+    				<input type="text" autocomplete="off" autocorrect="off" maxlength="64" id="index-kw" name="word" >
+    				<button type="submit" class="iconfont">&#xe6ab;</button>
+    			</div>
+    		</form>
+    		<!--下拉的是网址列表，点击跳转到新网址，还没做传值到表单-->
+    		<ul id="se-lists">
+    			<li class="current"><a href="">网页搜索</a><i>▼</i></li>
+    			<div id="se-lists-other">
+    		  	    <li><a href="">图片搜索</a></li>
+    			    <li><a href="">新闻搜索</a></li>
+    			    <li><a href="">地图搜索</a></li>
+    			</div>
+    		</ul>
+    	</div>
+    	<div id="blank-frame">
+    		<div class="content">
+    			<h2>这是一则大新闻</h2>
+    			<div class="pic-content">
+    				<div class="img-wrap"><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1748478035,1553172131&amp;fm=170&amp;s=8062F716420362F08E127B6D0300A068&amp;w=218&amp;h=146&amp;img.JPEG"></div>
+    				<div class="img-wrap"><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2267744407,1414777720&amp;fm=170&amp;s=33250EAE54036EE40E938B6C0300F07A&amp;w=218&amp;h=146&amp;img.JPEG"></div>
+    				<div class="img-wrap"><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1861034232,1429644823&amp;fm=170&amp;s=F0127F940E036EC6241A7B7903007068&amp;w=218&amp;h=146&amp;img.JPEG"></div>        
+    			</div>
+    			<span>新华网 10-07</span>
+    		</div>
+    		<div class="content">
+    			<h2>另外一则没有图片的大新闻</h2>
+    			<span>新华网 10-08</span>
+    		</div>
+    	</div>
+    </div>
+    <script>
+    $(document).ready(function(){
+        $("li.current").click(function(){
+            $("#se-lists-other").slideToggle();
+        });
+        $("li.current").toggle(function(){$("li.current i").text("▲");},function(){$("li.current i").text("▼")})
+    });
+</script>
+</body>
+</html>
